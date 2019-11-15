@@ -1,0 +1,54 @@
+PODS:
+  - FacebookSDK (5.10.1):
+    - FacebookSDK/CoreKit (= 5.10.1)
+    - FacebookSDK/MarketingKit (= 5.10.1)
+  - FacebookSDK/CoreKit (5.10.1):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookSDK/MarketingKit (5.10.1):
+    - FacebookSDK/CoreKit
+    - FBSDKMarketingKit (~> 5.0)
+  - FBSDKCoreKit (5.10.1):
+    - FBSDKCoreKit/Basics (= 5.10.1)
+    - FBSDKCoreKit/Core (= 5.10.1)
+  - FBSDKCoreKit/Basics (5.10.1)
+  - FBSDKCoreKit/Core (5.10.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKMarketingKit (5.10.1):
+    - FBSDKCoreKit (~> 5.5)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Rudder-Facebook (0.1.1):
+    - FacebookSDK
+    - RudderSDKCore
+  - RudderSDKCore (0.1.4)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - Rudder-Facebook (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FacebookSDK
+    - FBSDKCoreKit
+    - FBSDKMarketingKit
+    - FBSnapshotTestCase
+    - RudderSDKCore
+
+EXTERNAL SOURCES:
+  Rudder-Facebook:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FacebookSDK: 6037b5e4cbde73d40e7c835510ae307118917751
+  FBSDKCoreKit: aa8887f21898ac5bcf07bef4fb253aa41c91be04
+  FBSDKMarketingKit: 7bf10d0f716713615c3434a57e94dd7d14436cd8
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Rudder-Facebook: 891689f198b07fdf721c62c976edf30353062646
+  RudderSDKCore: fa1e5e81110ac3f2a1c7136969d37f13801e4295
+
+PODFILE CHECKSUM: 23f47a2524833b2655b382f8c347b100984ac0ce
+
+COCOAPODS: 1.8.4
