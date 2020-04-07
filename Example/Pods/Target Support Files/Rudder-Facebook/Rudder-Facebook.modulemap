@@ -1,6 +1,0 @@
-framework module Rudder_Facebook {
-  umbrella header "Rudder-Facebook-umbrella.h"
-
-  export *
-  module * { export * }
-}
