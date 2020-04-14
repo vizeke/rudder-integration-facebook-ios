@@ -7,7 +7,7 @@
 //
 
 #import "RUDDERAppDelegate.h"
-#import <RudderSDKCore/RudderClient.h>
+#import <Rudder/Rudder.h>
 #import <RudderFacebookFactory.h>
 
 @implementation RUDDERAppDelegate
@@ -17,10 +17,10 @@
     // Override point for customization after application launch.
     
     NSString *writeKey = @"1Tb4GaOlGHOVE1EeeqBkUZPW4x5";
-    NSString *endPointUrl = @"https://ba3b20fd.ngrok.io";
+    NSString *dataPlaneUrl = @"https://ba3b20fd.ngrok.io";
     
     RudderConfigBuilder *configBuilder = [[RudderConfigBuilder alloc] init];
-    [configBuilder withEndPointUrl:endPointUrl];
+    [configBuilder withDataPlaneUrl:dataPlaneUrl];
     [configBuilder withFactory:[RudderFacebookFactory instance]];
     RudderClient *rudderClient = [RudderClient getInstance:writeKey config:[configBuilder build]];
     

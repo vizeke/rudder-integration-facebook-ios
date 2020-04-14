@@ -6,8 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RudderIntegration.h"
-#import "RudderClient.h"
+#import <Rudder/Rudder.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 
