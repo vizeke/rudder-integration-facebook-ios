@@ -1,40 +1,36 @@
-[![Version](https://img.shields.io/cocoapods/v/Rudder-Facebook.svg?style=flat)](https://cocoapods.org/pods/Rudder-Facebook)
-[![Platform](https://img.shields.io/cocoapods/p/Rudder-Facebook.svg?style=flat)](https://cocoapods.org/pods/Rudder-Facebook)
-
 # What is Rudder?
 
-**Short answer:** 
+**Short answer:**
 Rudder is an open-source Segment alternative written in Go, built for the enterprise. .
 
-**Long answer:** 
+**Long answer:**
 Rudder is a platform for collecting, storing and routing customer event data to dozens of tools. Rudder is open-source, can run in your cloud environment (AWS, GCP, Azure or even your data-centre) and provides a powerful transformation framework to process your event data on the fly.
 
 Released under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-## Getting Started with Facebook App Events Integration of Android SDK
-1. Add [Facebook App Events](https://developers.facebook.com/docs/app-events/) as a destination in the [Dashboard](https://app.rudderlabs.com/) and define ```apiKey``` with your Facebook Application ID.
+## Getting Started with Facebook Integration of Android SDK
+1. Add [Facebook](http://Facebook.google.com) as a destination in the [Dashboard](https://app.rudderstack.com/).
 
-2. Follow [these](https://developers.facebook.com/docs/app-events/getting-started-app-events-ios/) instructions and setup your facebook app events application.  
-
-3. Rudder-Facebook is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
+2. Rudder-Facebook is available through [CocoaPods](https://cocoapods.org). To install it, add the following line to your Podfile and followed by `pod install`:
 
 ```ruby
 pod 'Rudder-Facebook'
 ```
 
+3. Download the `GoogleService-Info.plist` from your Facebook console and put it in your Project.
+
 ## Initialize ```RudderClient```
 Put this code in your ```AppDelegate.m``` file under the method ```didFinishLaunchingWithOptions```
 ```
-RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
-[builder withEndPointUrl:YOUR_DATA_PLANE_URL];
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
 [builder withFactory:[RudderFacebookFactory instance]];
-[RudderClient getInstance:YOUR_WRITE_KEY config:[builder build]];
+[builder withLoglevel:RSLogLevelDebug];
+[RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
 
 ## Send Events
 Follow the steps from [Rudder iOS SDK](https://github.com/rudderlabs/rudder-sdk-ios)
 
-# Coming Soon
-1. Native platform SDK integration support
-2. More documentation
-3. More destination support
+## Contact Us
+If you come across any issues while configuring or using RudderStack, please feel free to [contact us](https://rudderstack.com/contact/) or start a conversation on our [Discord](https://discordapp.com/invite/xNEdEGw) channel. We will be happy to help you.
