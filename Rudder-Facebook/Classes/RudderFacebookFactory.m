@@ -29,7 +29,7 @@
     return @"Facebook App Events";
 }
 
-- (nonnull id<RudderIntegration>)initiate:(nonnull NSDictionary *)config client:(nonnull RudderClient *)client rudderConfig:(nonnull RudderConfig *)rudderConfig {
+- (nonnull id<RSIntegration>)initiate:(nonnull NSDictionary *)config client:(nonnull RSClient *)client rudderConfig:(nonnull RSConfig *)rudderConfig {
     return [[RudderFacebookIntegration alloc] initWithConfig:config withAnalytics:client];
 }
 

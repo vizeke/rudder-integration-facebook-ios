@@ -12,13 +12,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RudderFacebookIntegration : NSObject<RudderIntegration>
+@interface RudderFacebookIntegration : NSObject<RSIntegration>
 
 @property (nonatomic, strong) NSDictionary *config;
-@property (nonatomic, strong) RudderClient *client;
+@property (nonatomic, strong) RSClient *client;
 @property (nonatomic, strong) FBSDKAppEvents *instance;
 
-- (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RudderClient *)client;
+- (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RSClient *)client;
 
 @end
 

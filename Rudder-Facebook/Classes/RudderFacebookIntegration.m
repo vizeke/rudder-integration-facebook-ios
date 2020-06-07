@@ -9,7 +9,7 @@
 
 @implementation RudderFacebookIntegration
 
-- (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RudderClient *)client {
+- (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RSClient *)client {
     if (self == [super init]) {
         _config = config;
         _client = client;
@@ -24,13 +24,13 @@
             [FBSDKSettings setAdvertiserIDCollectionEnabled:YES];
             [FBSDKAppEvents activateApp];
         }else {
-            [RudderLogger logError:@"Facebook Factory is not initialized"];
+            [RSLogger logError:@"Facebook Factory is not initialized"];
         }
     }
     return self;
 }
 
-- (void) processRuderEvent: (nonnull RudderMessage *) message {
+- (void) processRuderEvent: (nonnull RSMessage *) message {
     NSString *type = message.type;
     if ([type isEqualToString:@"identify"]) {
         [FBSDKAppEvents setUserID:message.userId];
@@ -48,11 +48,11 @@
     } else if ([type isEqualToString:@"track"] || [type isEqualToString:@"screen"]) {
         [FBSDKAppEvents logEvent:message.event parameters:message.properties];
     } else {
-        [RudderLogger logWarn:@"MessageType is not supported"];
+        [RSLogger logWarn:@"MessageType is not supported"];
     }
 }
 
-- (void)dump:(nonnull RudderMessage *)message {
+- (void)dump:(nonnull RSMessage *)message {
     [self processRuderEvent:message];
     
 }
