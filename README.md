@@ -23,7 +23,6 @@ Put this code in your ```AppDelegate.m``` file under the method ```didFinishLaun
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneUrl:DATA_PLANE_URL];
 [builder withFactory:[RudderFacebookFactory instance]];
-[builder withLoglevel:RSLogLevelDebug];
 [RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
 
