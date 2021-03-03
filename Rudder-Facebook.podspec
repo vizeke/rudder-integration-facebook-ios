@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
     s.source_files = 'Rudder-Facebook/Classes/**/*'
 
     s.dependency 'Rudder'
-    s.dependency 'FacebookSDK'
+    s.dependency 'FacebookSDK', '~> 8.0'
 end
